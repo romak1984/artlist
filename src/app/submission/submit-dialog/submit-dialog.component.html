@@ -1,0 +1,55 @@
+<div class="art-dialog" mat-dialog-content>
+  <form class="art-form" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+    <div class="left-form-side">
+
+      <h1>Submit your music</h1>
+
+      <input type="text" formControlName="name" placeholder="Full name">
+      <div *ngIf="profileForm.touched && profileForm.controls['name'].errors">
+        <div class="erorr" *ngIf="profileForm.controls['name'].errors.required">Mandatory field</div>
+      </div>
+
+      <input type="text" formControlName="email" placeholder="email">
+      <div *ngIf="profileForm.touched && profileForm.controls['email'].errors">
+        <div class="erorr" *ngIf="profileForm.controls['email'].errors.required">Mandatory field</div>
+        <div class="erorr" *ngIf="profileForm.controls['email'].errors.email">Wrong email format</div>
+      </div>
+
+      <input type="text" formControlName="country" placeholder="Country">
+      <div *ngIf="profileForm.touched && profileForm.controls['country'].errors">
+        <div class="erorr" *ngIf="profileForm.controls['country'].errors.required">Mandatory field</div>
+      </div>
+
+      <textarea formControlName="bio" placeholder="What do you do?"></textarea>
+      <div *ngIf="profileForm.touched && profileForm.controls['bio'].errors">
+        <div class="erorr" *ngIf="profileForm.controls['bio'].errors.required">Mandatory field</div>
+      </div>
+
+      <input type="text" formControlName="do" placeholder="What do you do">
+      <div *ngIf="profileForm.touched && profileForm.controls['do'].errors">
+        <div class="erorr" *ngIf="profileForm.controls['do'].errors.required">Mandatory field</div>
+      </div>
+
+      <input type="text" formControlName="links" placeholder="Portfolio links">
+
+    </div>
+
+    <div class="right-form-side">
+      <app-upload-files  (filesReady)="onFilesReady($event)"></app-upload-files>
+
+      <input type="text" formControlName="filesLength" style="visibility: hidden; height: 0;">
+      <div *ngIf="profileForm.touched && profileForm.controls['filesLength'].errors">
+        <div class="erorr" *ngIf="profileForm.controls['filesLength'].errors.required || profileForm.controls['filesLength'].errors.pattern">Choose between 4-6 files</div>
+      </div>
+
+      <div class="checkboxes">
+        <label><input type="checkbox" name="rigth" id="rights">I have full rights for the music</label>
+        <label><input type="checkbox" name="nocover" id="nocover">None of the songs are cover of onother's artists material</label>
+        <label><input type="checkbox" name="clear" id="clear">The music is clear for use in any Web platform, including Youtube monetezation </label>
+      </div>
+
+      <button class="art-button submit-button" type="submit" [mat-dialog-close]="profileForm.value" [disabled]="!profileForm.valid">Submit</button>
+    </div>
+  </form>
+</div>

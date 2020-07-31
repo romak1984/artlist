@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+//breakpoints
+
+
+
+body{
+  font-family: 'Raleway', sans-serif;
+}
+
+.art-button{
+  color: black;
+  background-color: yellow;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: .4s;
+  //outline: none;
+  box-shadow: none;
+  border: none;
+
+  &:hover{
+    background-color: lightyellow;
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.submit-dialog{
+  //opacity: .9;
+}
+
+.submit-dialog > .mat-dialog-container {
+  background: linear-gradient(to right, rgba(1,1,1,.9) 50%, rgba(1,1,1,1.0) 100%);
+
+  .mat-dialog-content {
+    max-height: none;
+  }
+}

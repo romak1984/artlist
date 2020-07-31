@@ -1,0 +1,21 @@
+<div class="files-upload-container">
+  <div class="upload-title">Upload music 4-6 song</div>
+
+  <div class="files-container">
+    <div class="file-container" *ngFor="let file of files; let i = index"><span class="file-name">{{file?.name}}</span><span class="remove-file-link" (click)="deleteFile(i)">remove</span></div>
+  </div>
+
+
+  <div class="dropzone"
+       appDnd
+       (filesDropped)="onFilesDropped($event)">
+    <input type="file"
+           name="files"
+           id="fileDropRef"
+           #fileDropRef
+          (change)="filesBrowsHandler($event.target.files)">
+
+    <h3><span>Click to upload</span><span> or drag and drop here</span></h3>
+    <div>MP3/WAW format</div>
+  </div>
+</div>

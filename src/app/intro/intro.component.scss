@@ -1,0 +1,44 @@
+@import "../cssUtils/variables";
+
+.intro {
+  position: relative;
+  height: 100vh;
+  min-height: 800px;
+  background-size: cover;
+  background: url("src/assets/images/about.png") center top no-repeat;
+}
+.intro-logo {
+  position: absolute;
+  top: 23px;
+  left: 29px;
+}
+
+.intro-title-container{
+  color: white;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  top: 200px;
+  left: 214px;
+
+  @media screen and (max-width: 1300px){
+    top: 110px;
+    left: 30px;
+  }
+
+  .title {
+    margin-bottom: 10px;
+    font-size: 70px;
+    font-weight: 400;
+  }
+
+  .sub-title {
+    font-size: 24px;
+    margin-bottom: 40px;;
+  }
+
+  .intro-arrow {
+    margin: 0 auto;
+  }
+}

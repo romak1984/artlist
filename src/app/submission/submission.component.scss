@@ -1,0 +1,34 @@
+.submission {
+  background-color: rgb(91, 97, 123);
+  position: relative;
+  min-height: 500px;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+
+  @media screen and (max-width: 1100px){
+    flex-direction: column-reverse;
+  }
+
+  .alboms {
+    height: 280px;
+  }
+
+  .title-container{
+    color: white;
+    font-size: 40px;
+    align-self: center;
+  }
+
+  .submission-btn-container{
+    margin: 30px auto;
+    text-align: center;
+
+    .submission-btn{
+
+    }
+  }
+
+}

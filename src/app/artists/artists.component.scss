@@ -1,0 +1,79 @@
+@import "../cssUtils/variables";
+
+.artists {
+  background: linear-gradient(rgba(0,0,0, 1) 20%,rgba(0,0,0, 0) 100%), url("src/assets/images/artists.png") center top no-repeat;
+
+  position: relative;
+  background-size: cover;
+  height: auto;
+  min-height: 100vh;
+
+  .artists-content {
+    margin: 0 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media screen and (max-width: 930px){
+      margin: 0 30px;
+    }
+
+  }
+
+
+  .artists-title{
+    margin-top: 60px;
+    color: white;
+    font-size: 35px;
+    font-weight: 300;
+  }
+
+  .artists-pics-container {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    grid-template-rows: auto;
+    column-gap: 30px;
+    justify-items: center;
+
+    @media screen and (max-width: 930px){
+      grid-template-columns: repeat(2, 300px);
+      grid-template-rows: repeat(2, auto);
+      column-gap: 10px;
+      row-gap: 10px;
+    }
+
+    @media screen and (max-width: 640px){
+      grid-template-columns: repeat(1, 300px);
+      grid-template-rows: repeat(4, auto);
+      column-gap: 10px;
+      row-gap: 10px;
+    }
+  }
+
+  .artists-sub-title {
+    margin-top: 80px;
+    color: white;
+    font-size: 35px;
+    font-weight: 300;
+  }
+
+  .suggestions-container {
+    margin-top: 20px;
+    display: grid;
+    column-gap: 20px;
+    row-gap: 20px;
+    grid-template-columns: repeat(3, 280px);
+    grid-template-rows: repeat(2, auto);
+
+    @media screen and (max-width: 930px){
+      grid-template-columns: repeat(2, 280px);
+      grid-template-rows: repeat(3, auto);
+    }
+
+    @media screen and (max-width: 640px){
+      grid-template-columns: repeat(1, 480px);
+      grid-template-rows: repeat(6, auto);
+    }
+  }
+}
