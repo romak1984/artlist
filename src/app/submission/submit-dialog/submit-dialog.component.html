@@ -16,7 +16,13 @@
         <div class="erorr" *ngIf="profileForm.controls['email'].errors.email">Wrong email format</div>
       </div>
 
-      <input type="text" formControlName="country" placeholder="Country">
+      <!-- <input type="text" formControlName="country" placeholder="Country"> -->
+
+      <select formControlName="country" class="form-control">
+        <option value="" disabled selected hidden>Country</option>
+        <option *ngFor="let country of country_list">{{country}}</option>
+      </select>
+
       <div *ngIf="profileForm.touched && profileForm.controls['country'].errors">
         <div class="erorr" *ngIf="profileForm.controls['country'].errors.required">Mandatory field</div>
       </div>
@@ -31,7 +37,22 @@
         <div class="erorr" *ngIf="profileForm.controls['do'].errors.required">Mandatory field</div>
       </div>
 
-      <input type="text" formControlName="links" placeholder="Portfolio links">
+      <div formArrayName="links">
+        <div *ngFor="let link of links.controls; index as idx" class="form-array">
+          <input [formControlName]="idx" placeholder="Enter link"/>
+          <a class="minus" (click)="deleteLinkField(idx)">&#8722;</a>
+
+          <div *ngIf="profileForm.touched && link.errors">
+            <div class="erorr" *ngIf="link.errors.required">Mandatory field</div>
+          </div>
+        </div>
+
+        <a class="add-link">
+          <span (click)="addLinkField()" class="plus">add link</span>
+        </a>
+      </div>
+
+
 
       <div class="radio-cont">
         <div>Are you registered with a pro</div>

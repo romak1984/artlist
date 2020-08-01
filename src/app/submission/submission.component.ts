@@ -18,8 +18,8 @@ export class SubmissionComponent implements OnInit {
 
   onOpenSubmit() {
     this.dialogRef = this.dialog.open(SubmitDialogComponent, {
-      height: "80vh",
-      width: "80vw",
+      height: "90vh",
+      width: "90vw",
       panelClass: 'submit-dialog',
       data: {}
     });
