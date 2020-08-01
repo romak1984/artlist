@@ -18,15 +18,24 @@ export class SubmitDialogComponent implements OnInit {
     country: new FormControl('', [Validators.required]),
     bio: new FormControl('', [Validators.required]),
     do: new FormControl('', [Validators.required]),
+    pro: new FormControl('No'),
     links: new FormControl(''),
     files: new FormControl([]),
-    filesLength: new FormControl('', [Validators.required, Validators.pattern('^(4|5|6)$')])
+    filesLength: new FormControl('', [Validators.required, Validators.pattern('^(4|5|6)$')]),
+    proName: new FormControl('')
   });
+
+  proControl = this.profileForm.get('proName');
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
 
+
+    this.profileForm.get('pro').valueChanges.subscribe(value => {
+      value === 'Yes' ? this.proControl.setValidators([Validators.required]) : this.proControl.setValidators(null);
+      this.proControl.updateValueAndValidity();
+    });
   }
 
   onFilesReady($event){

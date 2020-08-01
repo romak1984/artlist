@@ -41,10 +41,8 @@ export class SubmissionComponent implements OnInit {
 
         const formData = JSON.stringify(result);
         console.log(`Form result: ${JSON.stringify(result)}`);
-        localStorage.set('forData', formData);
+        localStorage.setItem('forData', formData);
       }
-
-
     });
   }
 }

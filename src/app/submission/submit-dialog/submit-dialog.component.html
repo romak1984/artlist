@@ -33,6 +33,24 @@
 
       <input type="text" formControlName="links" placeholder="Portfolio links">
 
+      <div class="radio-cont">
+        <div>Are you registered with a pro</div>
+        <div class="radio-buttons">
+          <label class="radio-lable" for="rad1"><input id="rad1" type="radio" value="Yes" name="pro" formControlName="pro">Yes</label>
+          <label class="radio-lable" for="rad2"><input id="rad2" type="radio" value="No" name="pro" formControlName="pro">No</label>
+        </div>
+      </div>
+
+      <div *ngIf="profileForm.controls['pro'].value === 'Yes'">
+        <input type="text" formControlName="proName" placeholder="Name of the pro">
+        <div *ngIf="profileForm.touched && profileForm.controls['proName'].errors">
+          <div class="erorr" *ngIf="profileForm.controls['proName'].errors.required">Mandatory field</div>
+        </div>
+      </div>
+
+
+
+
     </div>
 
     <div class="right-form-side">

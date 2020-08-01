@@ -44,6 +44,27 @@
           font-size: 11px;
         }
       }
+
+      .radio-cont{
+        margin: 10px;
+        font-size: 11px;
+        display:flex;
+        align-items: center;
+        margin-top:0px;
+
+        .radio-buttons{
+
+          display: flex;
+          align-items: center;
+
+          .radio-lable{
+            display: flex;
+            align-items: center;
+          }
+        }
+
+
+      }
     }
 
     .right-form-side {
