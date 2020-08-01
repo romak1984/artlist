@@ -41,7 +41,7 @@ import { UploadFilesComponent } from './components/upload-files/upload-files.com
     MatDialogModule,
     ReactiveFormsModule
   ],
-  entryComponents: [SubmitDialogComponent],
+  entryComponents: [SubmitDialogComponent, SubmitSuccessComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

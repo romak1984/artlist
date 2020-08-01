@@ -1,3 +1,4 @@
+import { SubmitSuccessComponent } from './../submit-success/submit-success.component';
 import { SubmitDialogComponent } from './submit-dialog/submit-dialog.component';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
@@ -42,6 +43,12 @@ export class SubmissionComponent implements OnInit {
         const formData = JSON.stringify(result);
         console.log(`Form result: ${JSON.stringify(result)}`);
         localStorage.setItem('forData', formData);
+
+        this.dialog.open(SubmitSuccessComponent, {
+          height: "90vh",
+          width: "90vw",
+          panelClass: 'submit-success-dialog'
+        });
       }
     });
   }

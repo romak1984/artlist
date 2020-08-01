@@ -43,3 +43,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   }
 }
 
+.submit-success-dialog > .mat-dialog-container {
+  background-color: rgba(1,1,1,.9);
+}
