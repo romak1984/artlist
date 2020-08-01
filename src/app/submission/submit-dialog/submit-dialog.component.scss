@@ -45,6 +45,10 @@
         font-size: 12px;
       }
 
+      .pro-name{
+        width: calc(100% - 31px);
+      }
+
       input,textarea {
         background-color: transparent;
         box-shadow: none;

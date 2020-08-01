@@ -63,7 +63,7 @@
       </div>
 
       <div *ngIf="profileForm.controls['pro'].value === 'Yes'">
-        <input type="text" formControlName="proName" placeholder="Name of the pro">
+        <input  class="pro-name" type="text" formControlName="proName" placeholder="Name of the pro">
         <div *ngIf="profileForm.touched && profileForm.controls['proName'].errors">
           <div class="erorr" *ngIf="profileForm.controls['proName'].errors.required">Mandatory field</div>
         </div>
